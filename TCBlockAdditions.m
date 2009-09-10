@@ -40,14 +40,14 @@
 
 void TCOnMain(dispatch_block_t block)
 {
-	[[[block copy] autorelease] performSelectorInBackground:@selector(my_callBlock) withObject: nil];
+	[[[block copy] autorelease] performSelectorOnMainThread:@selector(my_callBlock) withObject: nil waitUntilDone:NO];
 }
 
 @implementation NSObject (BlocksAdditions)
 
 - (void)my_callBlock
 {
-	void (^block)(void) = (id)self;
+	dispatch_block_t block = (id)self;
 	block();
 }
 

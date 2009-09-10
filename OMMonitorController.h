@@ -16,6 +16,8 @@
 	IBOutlet NSSegmentedControl *activeControl;
 	IBOutlet NSProgressIndicator *spinner;
 	
+	IBOutlet NSSegmentedControl *restartButton;
+	
 	BOOL discoveryIsOn;
 	BOOL overmindIsOn;
 	int otherErlangCount;
@@ -24,6 +26,7 @@
 }
 -(IBAction)toggleActive:(NSSegmentedControl*)sender;
 -(IBAction)restartErlang:(id)sender;
+-(IBAction)showConsole:(id)sender;
 
 @property BOOL discoveryIsOn;
 @property BOOL overmindIsOn;

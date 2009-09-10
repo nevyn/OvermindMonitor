@@ -49,6 +49,24 @@
 	
 	[self performSelector:@selector(determineErlangProcessCount) withObject:nil afterDelay:1.0];
 }
+-(BOOL)overmindIsActive;
+{
+	return system("launchctl list | grep se.bth.real.grace") == 0;
+}
+-(void)determineIfOvermindIsActive;
+{
+	if([self overmindIsActive]) {// Overmind is active in launchd
+		[activeControl setSelectedSegment:0];
+		[restartButton setLabel:@"Restart" forSegment:0];
+	} else {
+		[activeControl setSelectedSegment:1];
+		[restartButton setLabel:@"Shut down" forSegment:0];
+	}
+	
+	[spinner stopAnimation:nil];
+	
+	[self performSelector:@selector(determineIfOvermindIsActive) withObject:nil afterDelay:1.0];
+}
 -(void)awakeFromNib;
 {
 	[GrowlApplicationBridge setGrowlDelegate:self];
@@ -57,15 +75,39 @@
 	yesColor = [[overmindLabel textColor] retain];
 	
 	[self determineErlangProcessCount];
+	[self determineIfOvermindIsActive];
 }
 -(IBAction)toggleActive:(NSSegmentedControl*)sender;
 {
+	[spinner startAnimation:nil];
+	[activeControl setSelected:NO forSegment:0];
+	[activeControl setSelected:NO forSegment:1];
 	
+	NSString *command = nil;
+	BOOL wasActive = [self overmindIsActive];
+	if(wasActive)
+		command = @"launchctl unload -w /Library/LaunchAgents/se.bth.real.grace.plist";
+	else
+		command = @"launchctl load -w /Library/LaunchAgents/se.bth.real.grace.plist";
+	
+	int ret = system([command UTF8String]);
+	
+	if(ret != 0)
+		[GrowlApplicationBridge notifyWithTitle:[NSString stringWithFormat:@"Couldn't %@", wasActive?@"unload":@"load"]  description:@"Launchd wouldn't perform the given command. Check the log." notificationName:@"Warning" iconData:nil priority:0 isSticky:NO clickContext:nil];
+	else
+		system("killall beam.smp");
+	
+	// Spinner will deactivate and activeControl be set by determineIfOvermind… later
 }
 -(IBAction)restartErlang:(id)sender;
 {
 	if(system("killall beam.smp") != 0)
-		[GrowlApplicationBridge notifyWithTitle:@"Couldn't restart" description:@"Likely there were no Erlang processes running, or they weren't owned by you." notificationName:@"Warning" iconData:nil priority:0 isSticky:NO clickContext:nil];
+		[GrowlApplicationBridge notifyWithTitle:@"Couldn't restart/shutdown" description:@"Likely there were no Erlang processes running, or they weren't owned by you." notificationName:@"Warning" iconData:nil priority:0 isSticky:NO clickContext:nil];
+}
+
+-(IBAction)showConsole:(id)sender;
+{
+	system("open /Applications/Utilities/Console.app");
 }
 
 @synthesize discoveryIsOn, overmindIsOn, otherErlangCount;

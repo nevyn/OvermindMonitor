@@ -216,11 +216,11 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>05B3C8C4105812A100547BDF</string>
+						<string>05B3C8CC1058E87100547BDF</string>
 						<key>history</key>
 						<array>
-							<string>05B3C8BC1058125600547BDF</string>
-							<string>05B3C8BD1058125600547BDF</string>
+							<string>05B3C8C81058E87100547BDF</string>
+							<string>05B3C8C91058E87100547BDF</string>
 						</array>
 						<key>prevStack</key>
 						<array>
@@ -255,6 +255,8 @@
 							<string>05B3C8AF105811CC00547BDF</string>
 							<string>05B3C8BE1058125600547BDF</string>
 							<string>05B3C8BF1058125600547BDF</string>
+							<string>05B3C8CA1058E87100547BDF</string>
+							<string>05B3C8CB1058E87100547BDF</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -277,46 +279,6 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>05B3C87010580D6600547BDF</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>NSFileHandle.h</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>05B3C87110580D6600547BDF</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>NSFileHandle.h</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>05B3C8C5105812A100547BDF</string>
-						<key>history</key>
-						<array>
-							<string>05B3C87210580D6600547BDF</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {1152, 632}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>429 122 1152 673 0 0 1920 1178 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
 				<string>05B3C7E21057FE0000547BDF</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>NSTask.h</string>
@@ -331,7 +293,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>05B3C8C6105812A100547BDF</string>
+						<string>05B3C8CD1058E87100547BDF</string>
 						<key>history</key>
 						<array>
 							<string>05B3C84910580B3B00547BDF</string>
@@ -351,6 +313,46 @@
 				<false/>
 				<key>RubberWindowFrame</key>
 				<string>337 282 801 597 0 0 1920 1178 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>05B3C87010580D6600547BDF</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>NSFileHandle.h</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>05B3C87110580D6600547BDF</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>NSFileHandle.h</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>05B3C8CF1058E87100547BDF</string>
+						<key>history</key>
+						<array>
+							<string>05B3C87210580D6600547BDF</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {1152, 632}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>429 122 1152 673 0 0 1920 1178 </string>
 			</dict>
 		</dict>
 	</array>
@@ -636,13 +638,13 @@
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>05B3C7831057F5A700547BDF</string>
 		<string>05B3C7841057F5A700547BDF</string>
-		<string>05B3C7E21057FE0000547BDF</string>
 		<string>05B3C87010580D6600547BDF</string>
 		<string>1C530D52069F1CE1000CFCEE</string>
-		<string>/Users/nevyn/Desktop/OvermindMonitor/OvermindMonitor.xcodeproj</string>
-		<string>1C530D54069F1CE1000CFCEE</string>
 		<string>1C530D5B069F1CE1000CFCEE</string>
+		<string>05B3C7E21057FE0000547BDF</string>
+		<string>1C530D54069F1CE1000CFCEE</string>
 		<string>05B3C7501057F38D00547BDF</string>
+		<string>/Users/nevyn/Desktop/OvermindMonitor/OvermindMonitor.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>1570 758 350 420 0 0 1920 1178 </string>
