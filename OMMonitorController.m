@@ -12,7 +12,7 @@
 @implementation OMMonitorController
 -(void)determineErlangProcessCount;
 {	
-	NSTask *task = [[[NSTask alloc] init] autorelease];
+	NSTask *task = [[NSTask new] autorelease];
     [task setLaunchPath: @"/bin/bash"];
 	
     [task setArguments: [NSArray arrayWithObjects: @"-c", @"ps awwwxu | grep beam.smp | grep -v grep", nil]];
@@ -26,7 +26,7 @@
 	
 	
 	NSData *data = [file readDataToEndOfFile];
-	NSString *procsStr = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+	NSString *procsStr = [[[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding] autorelease];
 	NSArray *procs = [procsStr componentsSeparatedByString:@"\n"];
 	
 	BOOL discoveryIsOnNow = NO;
@@ -53,8 +53,8 @@
 {
 	[GrowlApplicationBridge setGrowlDelegate:self];
 	
-	noColor = [discoveryLabel textColor];
-	yesColor = [overmindLabel textColor];
+	noColor = [[discoveryLabel textColor] retain];
+	yesColor = [[overmindLabel textColor] retain];
 	
 	[self determineErlangProcessCount];
 }
